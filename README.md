@@ -1,31 +1,39 @@
 # Manual Vault
 
-A working prototype for an IT manual reference library.
+A server-backed IT manual library for storing, opening, reading, and searching equipment manuals.
 
-## Current functionality
+## Working functionality
 
-- Searchable library by model, manufacturer, symptom, category, and extracted PDF text
-- Add a manual with a cover/nameplate photo and a real PDF file
-- Store uploaded PDFs in browser IndexedDB
-- Open PDFs inside the app with the browser's native PDF viewer
-- Extract text from text-based PDFs with PDF.js and read it in the app
-- Search within extracted manual text
+- Real backend API and filesystem storage
+- Add a manual with manufacturer, model, notes, cover photo, and PDF
+- Upload PDFs from the public app
+- PDFs persist on the server instead of only in browser storage
+- Open uploaded PDFs through the browser PDF viewer
+- Extract text from text-based PDFs and search inside the manual
+- Read scanned/image-only PDFs in the viewer (OCR is the next upgrade)
 - Replace an attached PDF
-- Delete a manual and its locally stored PDF after confirmation
-- Troubleshooting starting point linked to the relevant manual record
+- Delete a manual and its stored files
+- Troubleshooting starting point linked to the relevant manual
 
-## Important storage boundary
-
-This is still a browser-local prototype. Manuals and PDFs are saved only in the browser/device where they were added. They do not sync across devices, and clearing site data can remove them. Scanned PDFs without a text layer can still be opened and read in the PDF viewer, but their text will not be indexed yet.
-
-## Production upgrade
-
-The next production version should move PDFs to private object storage, records to a database, and extracted/OCR text to a server-side index. It should also add login, manufacturer-source verification, page-level citations, and OCR for scanned manuals. The current UI is intentionally shaped around that workflow.
-
-## Run locally
+## Run the working server
 
 ```bash
-python3 -m http.server 4173
+node server.mjs
 ```
 
 Then open `http://localhost:4173`.
+
+The server stores records in `data/manuals.json` and uploaded files in `data/files/`.
+
+## Current access model
+
+This deployment is running through a temporary Cloudflare Tunnel to the Mac. It is usable from another device while the Node server and tunnel are running. It is not yet a permanent hosted production service or authenticated multi-user system.
+
+## Next production hardening
+
+- Add login/authentication before exposing private manuals publicly
+- Move files to private object storage and records to a hosted database
+- Add OCR for scanned/image-only manuals
+- Add verified manufacturer web search and source provenance
+- Add page-level citations and server-side full-text indexing
+- Add backups and permissions
