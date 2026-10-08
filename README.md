@@ -13,6 +13,7 @@ A server-backed IT manual library for storing, opening, reading, and searching e
 - Read scanned/image-only PDFs in the viewer (OCR is the next upgrade)
 - Replace an attached PDF
 - Edit a manual's title, manufacturer, category, year, tags, and notes after saving
+- Add custom categories from Settings and use them in filters, new manual intake, and editing
 - Delete a manual and its stored files
 - Troubleshooting starting point linked to the relevant manual
 
