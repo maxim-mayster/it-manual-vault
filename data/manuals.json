@@ -1,8 +1,1 @@
-[
-  {"id":"sample-unifi","title":"UniFi Switch USW-24-PoE","maker":"Ubiquiti","cat":"Networking","year":"2023","tags":["PoE","Switching","LED states"],"desc":"Installation and troubleshooting guide","pdf":false},
-  {"id":"sample-apc","title":"APC Smart-UPS 1500","maker":"APC / Schneider","cat":"Power","year":"2022","tags":["Battery","Alarms","Runtime"],"desc":"User and network management guide","pdf":false},
-  {"id":"sample-brother","title":"Brother HL-L8360CDW","maker":"Brother","cat":"Printers","year":"2021","tags":["Paper jams","Fuser","Error codes"],"desc":"Service and reference manual","pdf":false},
-  {"id":"sample-synology","title":"Synology DS923+","maker":"Synology","cat":"Networking","year":"2024","tags":["RAID","Drives","DSM"],"desc":"Hardware installation guide","pdf":false},
-  {"id":"sample-hikvision","title":"Hikvision DS-7608NI","maker":"Hikvision","cat":"Security","year":"2020","tags":["NVR","Cameras","HDD"],"desc":"Network video recorder user manual","pdf":false},
-  {"id":"sample-dell","title":"Dell OptiPlex 7090","maker":"Dell","cat":"Power","year":"2021","tags":["POST codes","RAM","BIOS"],"desc":"Owner and service manual","pdf":false}
-]
+[]
