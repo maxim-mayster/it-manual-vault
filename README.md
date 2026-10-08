@@ -1,33 +1,26 @@
 # Manual Vault
 
-A first working prototype for an IT manual reference library.
+A working prototype for an IT manual reference library.
 
-## Included in this prototype
+## Current functionality
 
-- Searchable manual library with sample IT equipment records
-- Search by model, manufacturer, symptom, or keyword
-- Category filters
-- Manual detail/PDF viewer placeholder
-- Guided troubleshooting surface that maps an issue to likely manuals
-- Add-manual intake flow with cover-photo upload field
-- Browser-local persistence using `localStorage`
-- Responsive layout for desktop and mobile
+- Searchable library by model, manufacturer, symptom, category, and extracted PDF text
+- Add a manual with a cover/nameplate photo and a real PDF file
+- Store uploaded PDFs in browser IndexedDB
+- Open PDFs inside the app with the browser's native PDF viewer
+- Extract text from text-based PDFs with PDF.js and read it in the app
+- Search within extracted manual text
+- Replace an attached PDF
+- Delete a manual and its locally stored PDF after confirmation
+- Troubleshooting starting point linked to the relevant manual record
 
-## Important boundary
+## Important storage boundary
 
-The current prototype does **not** yet perform OCR, web searching, PDF downloading, or AI retrieval. Those require a backend and a source-verification workflow. The interface is intentionally ready for those capabilities without claiming they are connected.
+This is still a browser-local prototype. Manuals and PDFs are saved only in the browser/device where they were added. They do not sync across devices, and clearing site data can remove them. Scanned PDFs without a text layer can still be opened and read in the PDF viewer, but their text will not be indexed yet.
 
-## Production architecture
+## Production upgrade
 
-1. Upload cover/nameplate photo.
-2. OCR the manufacturer, model, and part number.
-3. Search manufacturer sites and trusted documentation sources.
-4. Verify the match before saving an official PDF.
-5. Extract/index PDF text, including OCR for scanned manuals.
-6. Search with model + symptom and cite the manual/page.
-7. Store PDFs in object storage and records in a database with authentication.
-
-Recommended production stack: Next.js, Supabase Auth/Postgres/Storage, PDF text extraction with PyMuPDF, OCR only when needed, and retrieval results that always show the source manual and page.
+The next production version should move PDFs to private object storage, records to a database, and extracted/OCR text to a server-side index. It should also add login, manufacturer-source verification, page-level citations, and OCR for scanned manuals. The current UI is intentionally shaped around that workflow.
 
 ## Run locally
 
