@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="manifest" href="/manifest.webmanifest">
 <title>Manual Vault — IT reference library</title>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>window.addEventListener('load',()=>{if(window.pdfjsLib)pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'});</script>
@@ -56,6 +57,7 @@ body.dark :focus-visible{outline:2px solid #a4dab9!important;outline-offset:3px}
 body.dark .cover-fallback{background:#303731}body.dark .cover-fallback span{color:#aab3ab}body.dark .cover-fallback strong{color:#eef5ef}
 </style>
 <style>.inline-form{display:flex;gap:8px;align-items:center}.inline-form input{flex:1}.settings-actions{display:flex;gap:8px;flex-wrap:wrap}.settings-help{display:block;margin-top:10px;color:var(--muted)}@media(max-width:600px){.inline-form,.settings-actions{display:grid;grid-template-columns:1fr}.inline-form button{width:100%}}</style>
+<style>.favorite{position:absolute;right:10px;top:10px;width:32px;height:32px;border-radius:50%;background:#fffdf9dd!important;color:#7c877f;border:1px solid #d7d4ca;z-index:2;font-size:17px;line-height:1}.favorite.is-favorite{color:#b46d42;background:#fff4e8!important;border-color:#d4a17e}.cover{position:relative}</style>
 </head>
 <body>
 <div class="app">
