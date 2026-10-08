@@ -16,7 +16,12 @@ A server-backed IT manual library for storing, opening, reading, and searching e
 - Add custom categories from Settings and use them in filters, new manual intake, and editing
 - Delete a manual and its stored files
 - Troubleshooting starting point linked to the relevant manual
-
+- Cover/nameplate OCR-assisted intake using Tesseract.js
+- Grounded troubleshooting excerpts with indexed page markers
+- Asset tag, serial number, location/site, and firmware fields
+- PDF replacement version archives
+- Downloadable metadata backup endpoint
+- Installable/offline shell with service-worker caching
 ## Run the working server
 
 ```bash

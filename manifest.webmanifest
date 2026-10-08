@@ -1,0 +1,10 @@
+{
+  "name": "Manual Vault",
+  "short_name": "Manual Vault",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f2ed",
+  "theme_color": "#315b4d",
+  "description": "Single-user IT manual and troubleshooting reference library.",
+  "icons": []
+}
