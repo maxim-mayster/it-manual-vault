@@ -18,6 +18,7 @@ const seed = [
  {id:'sample-dell',title:'Dell OptiPlex 7090',maker:'Dell',cat:'Power',year:'2021',tags:['POST codes','RAM','BIOS'],desc:'Owner and service manual',pdf:false}
 ];
 if (!fs.existsSync(dbPath)) fs.writeFileSync(dbPath, JSON.stringify(seed, null, 2));
+else { try { const existing = JSON.parse(fs.readFileSync(dbPath,'utf8')); if (!Array.isArray(existing) || existing.length === 0) fs.writeFileSync(dbPath, JSON.stringify(seed, null, 2)); } catch { fs.writeFileSync(dbPath, JSON.stringify(seed, null, 2)); } }
 function readDb(){ try{return JSON.parse(fs.readFileSync(dbPath,'utf8'));}catch{return [];} }
 function writeDb(rows){fs.writeFileSync(dbPath, JSON.stringify(rows,null,2));}
 function send(res,status,body,type='application/json'){res.writeHead(status,{'Content-Type':type,'Cache-Control':'no-store','Access-Control-Allow-Origin':'*'});res.end(type==='application/json'?JSON.stringify(body):body);}
